@@ -1,10 +1,12 @@
 # spiffejp-demo
 
-This repository contains the manifests used in the demonstration of `Securing the Service Mesh with SPIRE` at [SPIFFE Meetup Tokyo #2](https://spiffe-jp.connpass.com/event/142393/) . The manifests have been created based on [spiffe/spire-examples](https://github.com/spiffe/spire-examples/tree/54dbcbc8c378bb11c5040eb261ec51bc82f8a79b) . Thanks, SPIFFE Community!
+Demo to build Service Mesh on Kubernetese using Envoy as data plane and SPIRE as control plane.
 
 - Use SPIRE 0.8.1 and Envoy 1.11.1
 - Use [NodeAttestor "k8s_psat"](https://github.com/spiffe/spire/blob/0.8.1/doc/plugin_server_nodeattestor_k8s_psat.md)
 - Enable Envoy SDS Support
+
+This repository contains the manifests used in the demonstration of `Securing the Service Mesh with SPIRE` at [SPIFFE Meetup Tokyo #2](https://spiffe-jp.connpass.com/event/142393/) . The manifests have been created based on [spiffe/spire-examples](https://github.com/spiffe/spire-examples/tree/54dbcbc8c378bb11c5040eb261ec51bc82f8a79b) . Thanks, SPIFFE Community!
 
 ## Overview
 
@@ -252,6 +254,16 @@ curl $(minikube ip):${VALID_API_CLIENT_ENVOY_ADMIN_NODE_PORT}/certs
 # Invalid API Client
 INVALID_API_CLIENT_ENVOY_ADMIN_NODE_PORT=$(kubectl get svc invalid-api-client -o jsonpath='{.spec.ports[?(@.name=="envoy-admin-port")].nodePort}')
 curl $(minikube ip):${INVALID_API_CLIENT_ENVOY_ADMIN_NODE_PORT}/certs
+```
+
+## 8. Cleaning Up
+
+```bash
+kubectl delete -f spire-server.yaml
+kubectl delete -f spire-agent.yaml
+kubectl delete -f api.yaml
+kubectl delete -f valid-api-client.yaml
+kubectl delete -f invalid-api-client.yaml
 ```
 
 ## License
