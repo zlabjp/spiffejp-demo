@@ -253,3 +253,7 @@ curl $(minikube ip):${VALID_API_CLIENT_ENVOY_ADMIN_NODE_PORT}/certs
 INVALID_API_CLIENT_ENVOY_ADMIN_NODE_PORT=$(kubectl get svc invalid-api-client -o jsonpath='{.spec.ports[?(@.name=="envoy-admin-port")].nodePort}')
 curl $(minikube ip):${INVALID_API_CLIENT_ENVOY_ADMIN_NODE_PORT}/certs
 ```
+
+## License
+
+MIT
