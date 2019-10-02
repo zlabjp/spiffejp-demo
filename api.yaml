@@ -98,11 +98,15 @@ data:
       statusCode: 200
       body: 'ok'
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: api
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: api
   template:
     metadata:
       labels:

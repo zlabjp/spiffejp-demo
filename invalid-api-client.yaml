@@ -85,11 +85,15 @@ data:
                       envoy_grpc:
                         cluster_name: spire_agent
 ---
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: invalid-api-client
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: invalid-api-client
   template:
     metadata:
       labels:
