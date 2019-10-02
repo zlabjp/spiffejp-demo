@@ -6,7 +6,7 @@ Demo to build Service Mesh on Kubernetese using Envoy as data plane and SPIRE as
 - Use [NodeAttestor "k8s_psat"](https://github.com/spiffe/spire/blob/0.8.1/doc/plugin_server_nodeattestor_k8s_psat.md)
 - Enable Envoy SDS Support
 
-This repository contains the manifests used in the demonstration of `Securing the Service Mesh with SPIRE` at [SPIFFE Meetup Tokyo #2](https://spiffe-jp.connpass.com/event/142393/) . The manifests have been created based on [spiffe/spire-examples](https://github.com/spiffe/spire-examples/tree/54dbcbc8c378bb11c5040eb261ec51bc82f8a79b) . Thanks, SPIFFE Community!
+This repository contains the manifests used in the demonstration of [Securing the Service Mesh with SPIRE](https://speakerdeck.com/ryysud/securing-the-service-mesh-with-spire) at [SPIFFE Meetup Tokyo #2](https://spiffe-jp.connpass.com/event/142393/) . The manifests have been created based on [spiffe/spire-examples](https://github.com/spiffe/spire-examples/tree/54dbcbc8c378bb11c5040eb261ec51bc82f8a79b) . Thanks, SPIFFE Community!
 
 ## Overview
 
